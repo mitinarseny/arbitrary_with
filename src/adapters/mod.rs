@@ -1,6 +1,7 @@
+mod display;
 mod from_into;
 
-pub use self::from_into::*;
+pub use self::{display::*, from_into::*};
 
 use core::{hash::Hash, marker::PhantomData};
 

@@ -1,3 +1,24 @@
+#![doc = include_str!("../README.md")]
+//! ## Example
+//! ```rust
+//! # use arbitrary::{Arbitrary, Error, Unstructured};
+//! # use arbitrary_with::{As, DisplayFromStr};
+//! #[derive(Arbitrary)]
+//! struct A {
+//!     #[arbitrary(with = As::<Option<DisplayFromStr<i32>>>::arbitrary)]
+//!     n: Option<String>,
+//! };
+//!
+//! # fn main() -> Result<(), Error> {
+//! # let mut u = Unstructured::new(&[1, 2, 3]);
+//! let a: A = u.arbitrary()?;
+//! if let Some(n) = a.n {
+//!     let _i: i32 = n.parse().unwrap();
+//! }
+//! # Ok(())
+//! # }
+//! ```
+
 mod adapters;
 mod alloc;
 mod core;

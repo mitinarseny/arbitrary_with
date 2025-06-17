@@ -2,8 +2,15 @@
 name = "arbitrary_with"
 version = "0.1.0"
 edition = "2024"
+repository = "https://github.com/mitinarseny/arbitrary_with"
+keywords = ["arbitrary", "with"]
+rust-version = "1.85"
+license-file = "LICENSE.txt"
 
 [dependencies]
 arbitrary = "1"
 array-util = "1"
 impl-tools = "0.11"
+
+[dev-dependencies]
+arbitrary = { version = "1", features = ["derive"] }
