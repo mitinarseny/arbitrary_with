@@ -25,7 +25,7 @@ mod core;
 mod std;
 pub use self::adapters::*;
 
-use arbitrary::{MaxRecursionReached, Result, Unstructured};
+pub use arbitrary::{self, *};
 
 pub trait ArbitraryAs<'a, T> {
     fn arbitrary_as(u: &mut Unstructured<'a>) -> Result<T>;
