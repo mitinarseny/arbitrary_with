@@ -1,0 +1,9 @@
+[package]
+name = "arbitrary_with"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+arbitrary = "1"
+array-util = "1"
+impl-tools = "0.11"
