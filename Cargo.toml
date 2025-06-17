@@ -3,6 +3,7 @@ name = "arbitrary_with"
 version = "0.1.0"
 edition = "2024"
 repository = "https://github.com/mitinarseny/arbitrary_with"
+description = "Adapters for `#[arbitrary(with = ...)]`"
 keywords = ["arbitrary", "with"]
 rust-version = "1.85"
 license-file = "LICENSE.txt"
