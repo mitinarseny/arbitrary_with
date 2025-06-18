@@ -1,7 +1,8 @@
 mod display;
 mod from_into;
+mod limit;
 
-pub use self::{display::*, from_into::*};
+pub use self::{display::*, from_into::*, limit::*};
 
 use core::{hash::Hash, marker::PhantomData};
 

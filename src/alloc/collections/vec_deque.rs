@@ -2,7 +2,7 @@ use std::collections::VecDeque;
 
 use arbitrary::{Arbitrary, MaxRecursionReached, Result, Unstructured};
 
-use crate::{ArbitraryAs, AsWrap};
+use crate::{ArbitraryAs, AsWrap, UnstructuredExt};
 
 impl<'a, T, As> ArbitraryAs<'a, VecDeque<T>> for VecDeque<As>
 where
@@ -10,16 +10,12 @@ where
 {
     #[inline]
     fn arbitrary_as(u: &mut Unstructured<'a>) -> Result<VecDeque<T>> {
-        u.arbitrary_iter::<AsWrap<T, As>>()?
-            .map(|r| r.map(AsWrap::into_inner))
-            .collect()
+        u.arbitrary_iter_as::<T, As>()?.collect()
     }
 
     #[inline]
     fn arbitrary_take_rest_as(u: Unstructured<'a>) -> Result<VecDeque<T>> {
-        u.arbitrary_take_rest_iter::<AsWrap<T, As>>()?
-            .map(|r| r.map(AsWrap::into_inner))
-            .collect()
+        u.arbitrary_take_rest_iter_as::<T, As>()?.collect()
     }
 
     #[inline]
